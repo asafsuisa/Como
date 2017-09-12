@@ -1,0 +1,72 @@
+<h2 md-dialog-title>{{title}}</h2>
+<md-dialog-content>
+    <form #f="ngForm" novalidate>
+        <table>
+            <tr>
+                <td>
+                    <md-select class="normal-box" placeholder="day start" [(ngModel)]="currentRow.day_start_range" 
+                        #day_start_range="ngModel" name="dayStart" [style.width]="'10em'" required>
+                        <md-option *ngFor="let day of Weekdays" [value]="day">
+                            {{day}}
+                        </md-option>
+                    </md-select>
+                    <div>
+                    <md-error *ngIf="(day_start_range.dirty || showAllAlertMessages)&& day_start_range.errors?.required">errorrrr</md-error>
+                    </div>
+                </td> 
+                <td>
+                    <md-select class="mormal-box" placeholder="day end" [(ngModel)]="currentRow.day_end_range" 
+                        #day_end_range="ngModel" name="dayEnd" [style.width]="'10em'">
+                        <md-option *ngFor="let day of Weekdays" [value]="day">
+                            {{day}}
+                        </md-option>
+                    </md-select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <md-form-field >
+                        <input type="number" mdInput [(ngModel)]="currentRow.time_start_hours_range" placeholder="time start hours" #time_start_hours_range="ngModel"
+                            name="time_start_hours_range" required [min]="0" [max]="23">
+                         <md-error *ngIf="(time_start_hours_range.dirty || showAllAlertMessages) && time_start_hours_range.errors?.required">This field is required</md-error>
+                         <md-error *ngIf="(time_start_hours_range.dirty || showAllAlertMessages) && (time_start_hours_range.errors?.min || time_start_hours_range.errors?.max)">
+                             The value must be between 0-23</md-error>
+                    </md-form-field>
+                </td>
+                <td>
+                    <md-form-field>
+                        <input type="number" mdInput [(ngModel)]="currentRow.time_start_minutes_range" placeholder="time start minutes" #time_start_minutes_range="ngModel"
+                            name="time_start_minutes_range" required [min]="0" [max]="59"> 
+                     <md-error *ngIf="(time_start_minutes_range.dirty || showAllAlertMessages) && time_start_minutes_range.errors?.required">This field is required</md-error>
+                     <md-error *ngIf="(time_start_minutes_range.dirty || showAllAlertMessages) && (time_start_minutes_range.errors?.min || time_start_minutes_range.errors?.max)">
+                             The value must be between 0-59</md-error>
+                    </md-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <md-form-field>
+                        <input type="number" mdInput [(ngModel)]="currentRow.time_end_hours_range" #time_end_hours_range="ngModel" name="time_end_hours_range"
+                            placeholder="time end hours" required [min]="0" [max]="23">
+                      <md-error *ngIf="(time_end_hours_range.dirty || showAllAlertMessages) && time_end_hours_range.errors?.required">This field is required</md-error>
+                      <md-error *ngIf="(time_end_hours_range.dirty || showAllAlertMessages) && (time_end_hours_range.errors?.min || time_end_hours_range.errors?.max)">
+                             The value must be between 0-23</md-error>
+                    </md-form-field>
+                </td>
+                <td>
+                    <md-form-field>
+                        <input type="number" mdInput [(ngModel)]="currentRow.time_end_minutes_range" #time_end_minutes_range="ngModel" name="time end minutes"
+                            placeholder="time end minutes" required [min]="0" [max]="59">
+                        <md-error *ngIf="(time_end_minutes_range.dirty || showAllAlertMessages) && time_end_minutes_range.errors?.required">This field is required</md-error>
+                        <md-error *ngIf="(time_end_minutes_range.dirty || showAllAlertMessages) && (time_end_minutes_range.errors?.min || time_end_minutes_range.errors?.max)">
+                             The value must be between 0-59</md-error>
+                    </md-form-field>
+                </td>
+            </tr>
+        </table>
+    </form>
+</md-dialog-content>
+<md-dialog-actions>
+    <button md-button md-dialog-close>Cancel</button>
+    <button md-button (click)="close(currentRow)">Save</button>
+</md-dialog-actions>

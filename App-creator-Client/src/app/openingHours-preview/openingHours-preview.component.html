@@ -1,0 +1,12 @@
+<div class="app-container"  [ngStyle]="{'background-color':globalData.background_color,'color':globalData.font_color}">
+    <div class="preview-title">{{globalData.openingHoursTitle}}</div>
+    <table>
+        <tr *ngFor="let timeElement of globalData.openingHours">
+            <td>
+                {{timeElement.day_start_range}}-{{timeElement.day_end_range}} {{timeElement.time_start_hours_range}}:{{timeElement.time_start_minutes_range
+                | number : '2.0'}} - {{timeElement.time_end_hours_range}}:{{timeElement.time_end_minutes_range | number :
+                '2.0'}}
+            </td>
+        </tr>
+    </table>
+</div>

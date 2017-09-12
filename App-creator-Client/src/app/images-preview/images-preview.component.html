@@ -1,0 +1,10 @@
+<div class="app-container" [ngStyle]="{'background-color':globalData.background_color,'color':globalData.font_color}">
+    <div class="preview-title">{{globalData.imagesTitle}}</div>
+    <div style="text-align: center;">
+        <ng-container *ngIf="globalData.currentImages">
+            <ng-container *ngFor="let image of globalData.currentImages">
+                <img [src]=image.previewURL>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

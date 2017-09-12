@@ -1,0 +1,40 @@
+<md-toolbar color="primary">
+  <span>App	Creator</span>
+</md-toolbar>
+<div fxLayout="row" fxFlexFill>
+  <div fxFlex="67">
+    <md-card class="basic-card">
+      <div class="buttons-section">
+        <button md-raised-button color="primary" [routerLink]="['', {outlets: {'input-route': ['aboutInput'], 'preview-route': ['aboutPreview']}}]">About</button>
+        <button md-raised-button color="primary" [routerLink]="['', {outlets: {'input-route': ['imagesInput'], 'preview-route': ['imagesPreview']}}]">Images</button>
+        <button md-raised-button color="primary" [routerLink]="['', {outlets: {'input-route': ['openingHoursInput'], 'preview-route': ['openingHoursPreview']}}]">Opening hours</button>
+      </div>
+      <router-outlet name="input-route"></router-outlet>
+    </md-card>
+    <md-card class="basic-card">
+      <md-card-header>
+
+        <md-card-title>Personal customization</md-card-title>
+        <md-card-subtitle>Upload your logo to change your application colors</md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+        <p>
+          <input type="file" (change)="fileChangeEvent($event)" [(ngModel)]="fileDemo" placeholder="Upload file..." />
+          <button class="upload-button" md-raised-button color="primary" type="button" (click)="upload()">Upload</button>
+          <button class="upload-button" md-raised-button color="primary" type="button" (click)="resetColorToDefult()">Reset colors</button>
+        </p>
+        <p>
+          <md-progress-bar *ngIf="inUploadProgress" mode="indeterminate"></md-progress-bar>
+        </p>
+      </md-card-content>
+    </md-card>
+
+  </div>
+
+  <div fxFlex="33" class="previewPage">
+    <md-card class="basic-card preview-warrper">
+      <router-outlet name="preview-route"></router-outlet>
+    </md-card>
+  </div>
+
+</div>

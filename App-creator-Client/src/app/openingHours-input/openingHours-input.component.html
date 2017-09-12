@@ -1,0 +1,28 @@
+<div class="tab-input">
+    <h2>Opening hours</h2>
+    <div>
+        <button md-raised-button color="primary" (click)="addNew()">Add new</button>
+        <md-form-field class="title-margin">
+            <input mdInput [(ngModel)]="globalData.openingHoursTitle" placeholder="title">
+        </md-form-field>
+    </div>
+    <table>
+        <tr *ngFor="let timeElement of globalData.openingHours;let i = index;">
+            <td>
+                {{timeElement.day_start_range}}-{{timeElement.day_end_range}} {{timeElement.time_start_hours_range}}:{{timeElement.time_start_minutes_range | number : '2.0'}}
+                - {{timeElement.time_end_hours_range}}:{{timeElement.time_end_minutes_range  | number : '2.0'}}
+            </td>
+
+            <td>
+                <button md-mini-fab color="primary" (click)="deleteElement(i)" md-tooltip="Delete">
+                    <md-icon class="md-24">delete</md-icon>  
+                </button>
+            </td>
+            <td>
+                <button md-mini-fab color="primary" (click)="editElement(i)" md-tooltip="Edit">
+                    <md-icon class="md-24">mode_edit</md-icon>  
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

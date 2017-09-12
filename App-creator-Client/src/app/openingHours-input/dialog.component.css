@@ -1,0 +1,14 @@
+
+/deep/ td{
+   padding: 1em;
+}
+
+/deep/.mat-form-field
+{
+ width: 10em;
+}
+
+.md-select.normal-box.mat-select
+{
+    width: 10em;
+}

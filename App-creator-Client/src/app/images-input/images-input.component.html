@@ -1,0 +1,17 @@
+<div class="tab-input">
+    <h2>Images</h2>
+    <div>
+        <md-form-field class="wide-box">
+            <input mdInput [(ngModel)]="globalData.imagesTitle" placeholder="title">
+        </md-form-field>
+    </div>
+    <div>
+        <md-form-field class="wide-box">
+            <input mdInput [(ngModel)]="globalData.imageSearch" placeholder="search">
+        </md-form-field>
+    </div>
+
+    <div>
+        <button md-raised-button color="primary" (click)="getImages(globalData.imageSearch)">Get Images</button>
+    </div>
+</div>

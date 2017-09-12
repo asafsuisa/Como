@@ -1,0 +1,43 @@
+/deep/ .basic-card
+{
+    margin:2em;
+}
+
+/deep/ .preview-warrper
+{
+    height: 640px;
+    width: 320px;
+    background-image: url('../assets/iphone_background.png');
+    background-size: contain;
+}
+/deep/ .tab-input
+{
+    margin:2em;
+}
+
+/deep/ .app-container{
+    width: 240px;
+    margin-top: 100px;
+    height: 422px;
+    overflow-y: auto;
+    margin: 93px 0px 0px 38px;
+}
+
+/deep/ .preview-title {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+/deep/ .buttons-section
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+/deep/ .upload-button
+{
+    margin-right: 1em !important;
+}

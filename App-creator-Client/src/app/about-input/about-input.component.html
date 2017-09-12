@@ -1,0 +1,28 @@
+
+<div class="tab-input">
+    <h2>About</h2>
+    <table>
+        <tr>
+            <td>
+                <md-form-field class="wide-box">
+                    <input mdInput [(ngModel)]="globalData.currentAbout.name" placeholder="name">
+                </md-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <md-form-field class="wide-box">
+                    <textarea  mdInput [(ngModel)]="globalData.currentAbout.description" placeholder="description"></textarea>
+                </md-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <md-form-field class="wide-box">
+                    <input mdInput [(ngModel)]="globalData.currentAbout.websiteURL" placeholder="website URL">
+                </md-form-field>
+            </td>
+        </tr>
+    </table>
+  
+</div>

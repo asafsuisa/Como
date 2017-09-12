@@ -1,0 +1,5 @@
+<div class="app-container" [ngStyle]="{'background-color':globalData.background_color,'color':globalData.font_color}">
+    <div class="preview-title">{{globalData.currentAbout?.name}}</div>
+    <div class="desc">{{globalData.currentAbout?.description}}</div>
+    <div class="link"><a [attr.href]="globalData.currentAbout?.websiteURL" target="_blank">{{globalData.currentAbout?.websiteURL}}</a></div>
+</div>
